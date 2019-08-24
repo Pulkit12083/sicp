@@ -1,0 +1,55 @@
+Exercise 1
+----------
+Too many parens in set-variable-value!'s let:
+
+ (define (set-variable-value! var val env)
+  (let ((binding ((find-in-environment var env))))
+;                 ^                           ^
+
+
+Exercise 2
+----------
+'or' doesn't evaluate its arguments:
+
+(or (= 1 2))
+;; => (= 1 2)
+
+It also defaults to true, instead of false:
+
+(or)
+;; => #t
+
+Change 'eval-or' to actually run the first clause through 'm-eval'
+
+(Students may note and fix exercise 4 while they're here, 'or' evaluating the
+argument only once)
+
+
+Exercise 3
+----------
+The not primitive is defined incorrectly:
+
+        (list '= =)
+        (list 'display display)
+        (list 'not 'not)
+;                  ^
+;                No quote wanted here
+
+Exercise 4
+----------
+'or' should only evaluate its argument once.
+
+'eval-or' should use a 'let' to temporarily store the result of
+m-eval'ing the first clause.
+
+
+Exercise 5
+----------
+Extend-environment adds to the wrong side of the environment stack:
+
+(define (extend-environment vars vals base-env)
+  (if (= (length vars) (length vals))
+      (append base-env (list (make-frame vars vals)))
+;             ^--(1)-^ ^-----------(2)-------------^
+
+(1) and (2) should be swapped.

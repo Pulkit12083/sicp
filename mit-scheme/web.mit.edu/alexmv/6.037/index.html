@@ -1,0 +1,247 @@
+<html>
+<head>
+<title>6.037 - Structure and Interpretation of Computer Programs</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+<body>
+<h1>6.037 - Structure and Interpretation of Computer Programs</h1>
+
+<h2>Introduction</h2>
+
+<blockquote>
+<p>This fast-paced course covers the material in the classic
+book <i>Structure and Interpretation of Computer Programs</i> &mdash; a class
+previously known at MIT as 6.001.  It uses Scheme to introduce students
+to principles of computation, and to teach thought patterns for computer
+science.  Students are taught to apply structural, procedural, and
+meta-linguistic abstraction to solve computational problems.  Five
+projects will be assigned and graded.</p>
+<p><b>Prerequisites</b>: some programming experience; high confusion
+threshold.</p>
+</blockquote>
+
+<p>This class is not meant as an introduction to programming; some
+programming experience is assumed.
+
+<p> If you have little to no experience with programming, we suggest
+<a href="https://www.eecs.mit.edu/academics-admissions/academic-information/eecs-iap-classes-2019">6.145</a>, <a href="https://www.eecs.mit.edu/academics-admissions/academic-information/eecs-iap-classes-2019">6.178</a>, or other non-credit offerings listed in the <a href="http://student.mit.edu/iap/nctoc.html">IAP guide</a>.
+
+<p>6.037 focuses on higher-level concepts and abstraction in Scheme, an
+interesting but esoteric language which is infrequently seen in the
+wild; The language is light on practicality, but lends itself well to
+discussing computational theory.  The class attempts to cram the entire
+material of a semester-long MIT course into eight two-hour lectures,
+with accompanying individual weekly projects, and as such is rather
+information-dense.</p>
+
+<p>Your tour guides for this adventure are: Mike Phillips, Benjamin
+Barenblat, Leon Shen, Ben Vandiver, and Arthur Migdal. To contact
+them, you can email 6.001-zombies at the obvious domain.</p>
+
+<h2>Logistics</h2>
+<ul>
+<li>Class meets TR7-9pm throughout IAP, in 32-044</li>
+
+<li>6 units of P/D/F credit are available; only the projects are
+graded.</li>
+
+<li>To sign up for the class e-mail list for IAP 2019 so you don't
+miss important announcements, <a href="signup.html">use this form</a>.
+</li>
+
+</ul>
+
+
+<h2>Projects</h2>
+
+<p>There will be five projects assigned.  Projects should be saved as
+plain text, and emailed to 6.037-psets at the obvious domain.</p>
+
+<ul> 
+  <li>Project 0: Basic scheme. <b>Due by 7pm on Thursday, January 10th.</b>
+    <ul>
+      <li><a href="p0.pdf">Handout</a></li>
+      <li>Code: <a href="simple-integration.scm">simple-integration.scm</a></li>
+    </ul>
+  </li>
+  <li>Project 1: Higher-order procedures and symbols. <b>Due by 7pm on Tues, January 15th.</b>
+    <ul>
+      <li><a href="p1.pdf">Handout</a></li>
+      <li>Code: <a href="calculus.scm">calculus.scm</a></li>
+    </ul>
+  </li>
+  <li>Project 2: Mutable objects and procedures with state. <b>Due by 7pm on Thurs, January 17th.</b>
+    <ul>
+      <li><a href="p2.pdf">Handout</a></li>
+      <li>Code: <a href="memoize.scm">memoize.scm</a>, <a href="table-tests.scm">table-tests.scm</a></li>
+    </ul>
+  </li>
+  <li>Project 3: Meta-circular evaluator. <b>Due by 10pm on Thurs, January 24th.</b>
+    <ul>
+      <li><a href="p3.pdf">Handout</a></li>
+      <li>Code: <a href="eval.scm">eval.scm</a></li>
+    </ul>
+  </li>
+  <li>BONUS Project 3 addendum (ungraded) -- Debugger</li>
+    <ul>
+      <li><a href="eval-debugger.pdf">Handout</a></li>
+      <li>Code: <a href="eval-debugger.scm">eval-debugger.scm</a></li>
+    </ul>
+  </li>     
+
+  <li>Project 4: OOP evaluator (The Adventure Game). <b>Due by 10pm on Fri, February 1st.</b>
+    <ul>
+      <li><a href="p4.pdf">Handout</a></li>
+      <li><a href="p4-scheme-files.zip">p4-scheme-files.zip</a> - all of the scheme files below</li>
+      <li>Code: <a href="oo-eval.scm">oo-eval.scm</a> - Run this from DrRacket; rest will be pulled in</li>
+      <li>Code: <a href="oo-eval-extras.scm">oo-eval-extras.scm</a></li>
+      <li>Code: <a href="alyssa-tests.scm">alyssa-tests.scm</a></li>
+      <li>Code: <a href="oo-world.scm">oo-world.scm</a></li>
+      <li>Code: <a href="oo-types.scm">oo-types.scm</a></li>
+      <li>Code: <a href="oo-util.scm">oo-util.scm</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2>Lectures</h2>
+
+<p>
+Slides presented in class will be linked below. For each, we've noted
+which SICP chapters and which Spring 2007 6.001 lectures we've drawn the
+material from, in case you want to delve deeper, get a second opinion,
+read ahead, etc. Please note that the book covers a lot of additional
+material, and we are mostly tracking the 6.001 lectures, not the textbook.
+</p>
+
+<ul>
+<li>Lecture 1: Syntax of Scheme, procedural abstraction, and recursion
+    [<a href="l1.pdf">Printable</a>] [<a href="l1-transitions.pdf">With slide transitions</a>]<br />
+    (<a href="http://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-9.html#%_chap_1">SICP chapter 1</a>;
+    Spring 2007 lectures
+       <a href="lecture_pdfs/Lect01Intro.pdf">1</a>,
+       <a href="lecture_pdfs/Lect02Scheme.pdf">2</a>, and
+       <a href="lecture_pdfs/Lect03procedures.pdf">3</a>)
+<ul>
+  <li>Recitation material: <a href="rec1a.pdf">Part 1</a>, <a href="rec1b.pdf">Part 2</a>, and <a href="rec1-soln.pdf">Solutions</a> </li>
+</ul>
+</li>
+
+<li>Lecture 2: Data abstractions, higher order procedures, symbols, and quotation
+    [<a href="l2.pdf">Printable</a>] [<a href="l2-transitions.pdf">With slide transitions</a>]</b><br />
+    (<a href="http://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-13.html#%_chap_2">SICP chapter 2</a>;
+    Spring 2007 lectures
+       <a href="lecture_pdfs/Lect05data_abstractions_ST07.pdf">5</a>,
+       <a href="lecture_pdfs/Lect07higher_order_procedures.pdf">7</a>, and
+       <a href="lecture_pdfs/Lect9symbols_quote_ST07.pdf">9</a>)
+<ul>
+  <li>Recitation material: <a href="rec2.pdf">Handout</a> and <a href="rec2-soln.pdf">solutions</a>.</li>
+</ul>
+</li>
+
+<li>Lecture 3: Mutation, and the environment model
+    [<a href="l3.pdf">Printable</a>] [<a href="l3.odp">With slide transitions</a>]<br />
+    (<a href="http://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-19.html#%_chap_3">SICP chapters 3.1 - 3.3</a>;
+    Spring 2007 lectures
+       <a href="lecture_pdfs/Lect11mutation.pdf">11</a>,
+       <a href="lecture_pdfs/Lect14environment-model.pdf">14</a>)
+<ul>
+  <li>Recitation material: <a href="rec3.pdf">Handout</a> and <a href="rec3-soln.pdf">solutions</a> </li>
+</ul>
+</li>
+
+<li>Lecture 4: Interpretation and evaluation
+    [<a href="l4.pdf">Printable</a>] [<a href="l4.odp">With slide transitions</a>]<br />
+       (<a href="http://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-25.html#%_chap_4">SICP chapters 4.1</a>)
+<ul>
+  <li>Recitation material: <a href="eval.pdf">Evaluator</a>, <a href="rec4.pdf">Handout</a>, and <a href="rec4-soln.pdf">Solutions</a></li>
+</ul>
+</li>
+
+<li>Lecture 5: Debugging [<a href="l5.pdf">Printable</a>] [<a href="l5-transitions.pdf">With slide transitions</a>]
+<ul>
+  <li>Recitation material: <a href="eval-broken.scm">eval-broken.scm</a>, and <a href="rec5-soln.txt">solutions</a></li>
+</ul>
+</li>
+
+
+<li>Lecture 6: Language design and implementation
+  [<a href="l6.pdf">Printable</a>]
+  [<a href="l6.odp">LibreOffice slides</a>]
+<ul>
+  <li>Object system #2 from lecture: <a href="oo-sys.scm">Scheme code</a> [<a href="oo-sys.pdf">Printable</a>]</li>
+  <li>Recitation material: <a href="rec6.pdf">Handout</a>, and <a href="rec6-soln.pdf">Solutions</a></li>
+</ul>
+</li>
+
+<li>Lecture 7: Continuations, lazy evaluation, and streams</li>
+  [<a href="l7a.pdf">Continuations printable</a>]
+  [<a href="l7a-transitions.pdf">Continuations with slide transitions</a>]
+  [<a href="l7b.pdf">Lazy evaluation/streams printable</a>]
+  [<a href="l7b.pptx">Lazy evaluation/streams slides</a>]
+  (SICP chapter <a href="http://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-24.html#%_sec_3.5">3.5</a>).
+<ul>
+  <li>Recitation material: <a href="rec7.pdf">Handout</a>, <a href="rec7-soln.pdf">Solutions</a>, and <a href="streams.scm">code</a> for trying this out in Racket. </li>
+</ul>
+</li>
+
+<li>Lecture 8: Concurrency, Garbage Collection, 6.001 in perspective, and the Lambda Calculus</li>
+<ul>
+<li>Concurrency [<a href="l8a.pdf">printable</a>] [<a href="l8a-transitions.pdf">with transitions</a>] (SICP chapter <a href="http://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-23.html#%_sec_3.4">3.4</a>).</li>
+<li>Garbage Collection [<a href="l8b.pdf">printable</a>] [<a href="l8b-transitions.pdf">with transitions</a>] (SICP chapter <a href="http://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-33.html#%_sec_5.3">5.3</a>).</li>
+<li>6.001 in perspective [<a href="l8c.pdf">printable</a>] [<a href="l8c-transitions.pdf">with transitions</a>]</li>
+<li>The Magic Lecture [<a href="lambda.scm">Code from lecture</a>] [<a href="l8-magic.pdf">printable</a>] [<a href="l8-magic-transitions.pdf">with transitions</a>]</li>
+</ul>
+</li>
+
+</ul>
+
+
+<h2>Calendar</h2>
+<iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;bgcolor=%23111122&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=8er81jeak46p5m5nlsoadhnuas%40group.calendar.google.com&amp;color=%222233&amp;ctz=America%2FNew_York&amp;dates=20190107/20190201" scrolling="no"></iframe>
+
+<h2>Resources</h2>
+<ul>
+<li><a href="http://www.racket-lang.org/">Racket</a> (previously DrScheme), the scheme evaluator we will be using
+<ul><li>Also available on Athena machines: <tt>add drracket; drracket</tt></li>
+<li>For language selection, select "The Racket Language" (a.k.a. "Determine language from source"). Hit the Show Details button, and set the Output Style to "write." Use the Language menu to make these changes.</li></ul></li>
+<li><a href="http://mitpress.mit.edu/sicp/">Structure and Interpretation of Computer Programs</a>, the textbook written for 6.001.  A <a href="sicp.pdf">PDF version</a> (courtesy of <a href="https://github.com/sarabander/sicp-pdf">github.com/sarabander/sicp-pdf</a>) is also available.</li>
+<!--
+<li>Lecture notes from <a href="http://sicp.ai.mit.edu/Spring-2007/calendar.html">6.001, Spring 2007</a> might be useful for getting extra exposition on some topics as well, or to look ahead before the Caffeinated slides for those topics are posted.</li>  
+Noted not up any longer Jan 2019, likely down much longer. Switched to a local cache above. -->
+
+<!-- <li><a href="http://icampustutor.csail.mit.edu/6.001-public/">6.001 online tutor</a>, from the MIT iCampus XTutor project. This contains online problem sets you can do and get instant feedback (you will grow to love the "check" button as much as students of yore).  We won't grade these &mdash; so ignore the due dates associated with them! &mdash; but some people may find it a useful way to do little exercises to check their understanding of the topics presented.  It also contains online versions of the lectures, with synchronized audio and slides.</li>  
+ Died December 2017 -->
+<li>The Revised<sup>5</sup> Report on the Algorithmic Language Scheme:
+	<a href="http://www.schemers.org/Documents/Standards/R5RS/r5rs.pdf">PDF</a>
+      | <a href="http://www.schemers.org/Documents/Standards/R5RS/HTML/">HTML</a>
+</li>
+</ul>
+
+<h2>Getting help</h2>
+<ul>
+<li>You can e-mail the course staff at: 6.001-zombies at the obvious
+domain.</li>
+<li>Students are also welcome to join the staff on Zephyr, MIT's
+messaging system. Subscribe to the class named "6.037". If you're new
+to Zephyr, we recommend the
+excellent <a href="http://barnowl.mit.edu/wiki/GettingStarted">Barnowl</a>
+Zephyr client.</li>
+</ul>
+
+<h2>Acknowledgments</h2>
+<p>Since this course is a heavily condensed version of 6.001, we owe
+thanks to all who have ever taught or otherwise supported 6.001 over its
+long run. While these people are too numerous to list here, there are
+definitely some names we would be remiss to omit:</p>
+<ul>
+<li>Eric Grimson, who taught 6.001 a total of 27 times, and from whose
+lecture slides and projects we have borrowed heavily.</li>
+<li>Gerry Sussman and Hal Abelson, the original architects of the course
+and authors of the SICP text.</li>
+<li>Anne Hunter, Course 6's fairy godmother, for taking an interest and
+helping make sure 6.037 happened.</li>
+</ul>
+
+
+</body>
+</html>
