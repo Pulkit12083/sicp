@@ -73,3 +73,4 @@
 (bitfunc-integral-difference 2 0 10)
 (bitfunc-integral-difference 1 1 6)
 (bitfunc-integral-difference 0 5 5)
+;closing exercise
