@@ -1,4 +1,3 @@
-#lang scheme
 ;Recursive
 ;f(n) = n (if n<3)
 ;f(n) = f(n-1) + 2*f(n-2) + 3*f(n-3)
@@ -18,4 +17,5 @@
   (if (< n 3)
       n
       (f-iter 3 2 1 0)))
-  
+
+
