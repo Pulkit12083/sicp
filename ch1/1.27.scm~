@@ -1,0 +1,15 @@
+;; Ex 1.27
+;; Carmichael Numbers (a few of them at least)
+;; 561, 1105, 1729, 2465, 2821, 6601
+
+;; try fermat's test on each value a below n
+
+(define (fermatsTest p)
+  (define (check val)
+    (= (expmod val p p) val))
+  (check (+ 1 (random (- p 1)))))
+
+(define (isPrimeGuess p times)
+  (cond ((= times 0) true)
+	((fermatsTest p) (isPrimeGuess p (- times 1)))
+	(else false)))
