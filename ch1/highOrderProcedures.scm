@@ -65,7 +65,7 @@
   (define (fTerm x)
     (cond ((= (coefficient x) 0) (f x))
 	  ((= (coefficient x) n) (f x))
-	  ((= (remainder (coefficient x) 2) 1) (* 4 (f x)))
+	  ((= (remainder (coefficient x) 2) 1) (* 4.0 (f x)))
 	  (else (* 2.0 (f x)))))
   (/ (* (- b a) (sum fTerm a sIntegInc b)) (* 3 n)))
 

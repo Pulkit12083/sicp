@@ -9,8 +9,6 @@
     (if (> a b) result (iter (next a) (* result (term a)))))
   (iter a 1))
 
-
-
 (define (identity x) x)
 (define (incVal x) (+ x 1))
 (productItr identity 1 incVal 4)

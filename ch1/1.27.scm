@@ -34,6 +34,7 @@
 (millerRabinTest 2821) ;;#f
 (millerRabinTest 6601) ;;#f
 (millerRabinTest 7)    ;;#t
+(millerRabinTest 3)    ;;#t
 ;;cannot be fooled
 
 
