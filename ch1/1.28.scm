@@ -8,7 +8,7 @@
 
 (define (expmod base exp m)
   (cond ((= exp 0) 1)
-	((= (remainder (square base) m) 1) 0)
+	((and (not (= base (- m 1))) (= (remainder (square base) m) 1)) 0)
 	((even? exp) (remainder (square (expmod base (/ exp 2) m)) m))
 	(else (remainder (* base (expmod base (- exp 1) m)) m))))
 

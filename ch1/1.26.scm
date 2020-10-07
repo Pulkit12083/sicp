@@ -6,7 +6,6 @@
 ;;first compute (a^n)%n for (a,n)
 
 ;;naive
-hello what
 (define (even? val) (= (remainder val 2) 0))
 
 (define (expmodn a n)

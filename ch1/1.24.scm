@@ -1,11 +1,7 @@
 
 
-;;first compute (a^n)%n for (a,n)
-
-;;naive
-hello what
+;;first compute (a^n)%n for (a,n) naively
 (define (even? val) (= (remainder val 2) 0))
-
 (define (expmodn a n)
   (define (faster-exp base power)
     (define (exp-iter b n product)
