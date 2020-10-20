@@ -1,0 +1,16 @@
+;; Approximate pi/4: (2.4.4.6.6.8.8.10.10.12.12.14)/(3.3.5.5.7.7.9.9.11.11.13.13..)
+
+;; recursive procedure for product
+(define (productRec term a next b)
+  (if (> a b) 1 (* (term a) (productRec term (next a) next b))))
+
+(define (identity x) x)
+(define (incVal x) (+ x 2))
+
+;; approximating pi/4
+(define (pi4IntegRec n)
+  (define (inc x) (+ x 2.0))
+  (/ (* 8 (/ (productRec square 4.0 inc (* 2 n)) (productRec square 3.0 inc (- (* 2 n) 1)))) (* 2 n)))
+
+
+(pi4IntegRec 15)

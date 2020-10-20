@@ -1,0 +1,33 @@
+;; comparing high order procedures with naive procedures
+
+;; I. naive implementations that don't use procedural abstractions
+
+(define (nRangedSum a b)
+  (if (> a b) 0
+      (+ a (nRangedSum (+ a 1) b))))
+
+(define (nRangedCube a b)
+  (if (> a b) 0
+      (+ (* a a a) (nRangedCube (+ a 1) b))))
+
+;;Leibniz's summation for approximating pi/8:
+
+(define (nPiSum a b)
+  (if (> a b) 0
+      (+ (/ 1.0 (* a (+ a 2))) (nPiSum (+ a 4) b))))
+
+(nPisum 1 100) ;; .390199..
+
+#| common pattern: Summation!
+(define (<procedureName> a b)
+  (if (<comparator> a b) <terminalValue>
+      (+ (term a) (<procedureName> (next a) b))))
+|#
+
+;; term and next are procedures that are arguments to this higher order procedure
+(define (sum term a next b)
+  (if (> a b) 0
+      (+ (term a) (sum term (next a) next b))))
+
+;; redefine above methods now
+

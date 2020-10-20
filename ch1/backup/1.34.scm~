@@ -1,0 +1,4 @@
+;; infinite loop.
+
+(define (f g)
+  (g 2))
