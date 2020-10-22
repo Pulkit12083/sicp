@@ -1,5 +1,27 @@
 ;; 2.3 rectangle
 
+(define (make-rectangle refPoint radian width length)
+  (cons (cons refPoint radian)
+	(cons width length)))
+
+(define (rectangle-width rect)
+  (car (cdr rect)))
+
+(define (rectangle-height rect)
+  (cdr (cdr rect)))
+
+;; use
+(define (rectangle-perimenter rect)
+  (* 2 (+ (rectangle-width rect) (rectangle-height rect))))
+(define (rectangle-area rect)
+  (* (rectangle-width rect) (rectangle-height rect)))
+
+
+
+
+
+
+	 
 (define (make-point x y) (cons x y))
 (define (x-point p) (car p))
 (define (y-point p) (cdr p))
