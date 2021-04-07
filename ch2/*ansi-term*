@@ -1,0 +1,4 @@
+..: 1: [: lynx: unexpected operator
+..: 1: exec: lynx www.google.com: not found
+
+Process *ansi-term* exited abnormally with code 127

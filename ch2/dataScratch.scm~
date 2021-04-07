@@ -1,0 +1,50 @@
+(define (linear-combination-simple a b x y)
+  (+ (* a x) (* b y)))
+
+(define (linera-combination-generic a b x y)
+  (add (mul a x) (mul by )))
+
+
+(define (make-rat n d) (cons n d))
+(define (num r) (car r))
+(define (den r) (cdr r))
+
+(define (print-rat r)
+  (display (num r))
+  (display "/")
+  (display (den r)))
+
+;2.1
+(define (make-rat a b)
+  (if (< b 0)
+      (cons (* -1 a) (*-1 b))
+      (cons a b)))
+
+(define (print-point p)
+  (newline)
+  (display "(")
+  (display (x-point p))
+  (display ",")
+  (display (y-point p))
+  (display ")"))
+
+(define (make-point x y)
+  (cons x y))
+(define (x-point p)
+  (car p))
+(define (y-point p)
+  (cdr p))
+
+(define (make-segment p1 p2)
+  (cons p1 p2))
+
+(define (seg-s s)
+  (car s))
+(define (seg-e s)
+  (cdr e))
+
+(define (mid-point s)
+  (define (avg x y) (/ (+ x y) 2.0))
+  (make-point (avg (x-point (seg-s s)) (x-point (seg-e s)))
+	      (avg (y-point (seg-s s)) (y-point (seg-e s)))))
+

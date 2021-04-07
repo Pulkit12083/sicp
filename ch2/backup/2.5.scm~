@@ -1,0 +1,10 @@
+(define (exp x n)
+  (if (= n 0) 1
+      (* x (exp x (- n 1)))))
+
+(define (cons a b)
+  (lambda (m) (m )))
+
+(define (car pr)
+  (
+  
