@@ -101,3 +101,25 @@
 
 
 
+;; mapping :)
+
+;; of the general form:
+
+(define (map proc items)
+  (if (null? items)			;
+      nil				; unbound variable nil
+      (cons (proc (car items))
+            (map proc (cdr items)))))
+
+(map abs (list -10 2.5 -11.6 17))
+;; (10 2.5 11.6 17)
+(map (lambda (x) (* x x))
+     (list 1 2 3 4))
+;; (1 4 9 16)
+(define (scale-list items factor)
+  (map (lambda (x) (* x factor))
+       items))
+(scale-list (list 1 2 3 4 5) 5)
+;; (5 10 15 20 25)
+(scale-list (list 1 2 3 4 5) 10)
+;; (10 20 30 40 50)
