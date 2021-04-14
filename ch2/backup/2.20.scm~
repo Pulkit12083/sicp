@@ -1,0 +1,5 @@
+;2.20 recursive
+(define (same-parity num . cList)
+  (cond ((null? cList) (list num))
+	((= (modulo num 2) (modulo (car cList) 2))
+	 

@@ -1,0 +1,4 @@
+(define (count-leaves t)
+  (accumulate (lambda (x y) (+ (count-leaves x) (count-leaves y)))
+	      0
+	      (map <??> <??>)))
