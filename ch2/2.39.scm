@@ -19,8 +19,11 @@
 
 ;; 2.39
 (define (reverse sequence)
-  (fold-right (lambda (x y) ) nil sequence))
+  (fold-right (lambda (x y) (append (list x) y)) nil sequence))
 
+(reverse (list 1 2 3 4 5))
 
 (define (reverse sequence)
-  (fold-left (lambda (x y) <??>) nil sequence))
+  (fold-left (lambda (x y) (append x (list y))) nil sequence))
+
+(reverse (list 1 2 3 4 5))
