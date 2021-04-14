@@ -123,3 +123,41 @@
 ;; (5 10 15 20 25)
 (scale-list (list 1 2 3 4 5) 10)
 ;; (10 20 30 40 50)
+
+;; mapping over trees
+(define nil '())
+(define (scale-tree tree factor)
+        ;; tree first condition is nil
+  (cond ((null? tree) nil)
+	;; tree second condition is not pair
+        ((not (pair? tree)) (* tree factor))
+	;; tree third condition is pair
+        (else (cons (scale-tree (car tree) factor)
+                    (scale-tree (cdr tree) factor)))))
+
+
+(scale-tree (list 1 (list 2 (list 3 4) 5) (list 6 7))
+            10)
+
+;;(10 (20 (30 40) 50) (60 70))
+
+;; recursive map over each tree list
+
+(define (scale-tree tree factor)
+  (map (lambda (sub-tree)
+         (if (pair? sub-tree)
+             (scale-tree sub-tree factor)
+             (* sub-tree factor)))
+       tree))
+
+
+(map square (list 1 2 3 4 5))
+;;(1 4 9 16 25)
+
+;; filter on predicatae
+(define (filter predicate sequence)
+  (cond ((null? sequence) nil)
+        ((predicate (car sequence))
+         (cons (car sequence)
+               (filter predicate (cdr sequence))))
+        (else (filter predicate (cdr sequence)))))
