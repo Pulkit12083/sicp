@@ -1,3 +1,8 @@
+
+;; nested mapping practice
+
+
+;;
 (define (linear-combination-simple a b x y)
   (+ (* a x) (* b y)))
 
@@ -190,3 +195,36 @@
               (map square
                    (filter odd?
                            (enumerate-tree tree)))))
+
+;;---------------------------------------------------------------
+;; quick brush pu on 5 may 21.
+
+(define (filter2 predicate sequence)
+  (if (null? sequence)
+      '()
+      (if (predicate (car sequence))
+	  (cons (car sequence)
+		(filter2 predicate (cdr sequence)))
+	  (filter2 predicate (cdr sequence)))))
+(define evens (lambda (seq) (filter2 (lambda (x) (= (modulo x 2) 0)) seq)))
+(evens (list 1 2 3 4 5 6 7 8 9))
+
+;; i wonder how difficult it would be to implement a lisp network map)
+(define (nmap func seq)
+  (if (null? seq)
+      '()
+      (cons (func (car seq))
+	    (nmap func (cdr seq)))))
+(define squarelist (lambda (seq) (nmap (lambda (x) (* x x)) seq)))
+(squarelist (list 0 1 2 3 4 5 6 7 8 9))
+
+
+(define (accu func initval seq)
+  (if (null? seq)
+      initval
+      (func (car seq) (accu func initval (cdr seq)))))
+
+(= (accu + 0 (list 1 2 3 4 5)) 15) ;;#t
+;; i ought to write more test cases.
+;;------------------------------------------------------------------
+
