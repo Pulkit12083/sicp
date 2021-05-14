@@ -115,4 +115,5 @@
 (define (lookup given-key tree-of-records)
   (cond ((null? tree-of-records) false)
 	((equal? given-key (key (entry tree-of-records))) (entry tree-of-records))
-	((< given-key (
+	((< given-key (key (entry tree-of-records))) (lookup given-key (left tree-of-records)))
+	(else (lookup given-key (right tree-of-records)))))
