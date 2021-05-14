@@ -57,4 +57,55 @@
                     (make-leaf-set (cdr pairs))))))
 
 
+;;2.67
+(define sample-tree
+  (make-code-tree (make-leaf 'A 4)
+                  (make-code-tree
+                   (make-leaf 'B 2)
+                   (make-code-tree (make-leaf 'D 1)
+                                   (make-leaf 'C 1)))))
+
+ (define sample-message '(0 1 1 0 0 1 0 1 0 1 1 1 0))
+
+(decode sample-message sample-tree)
+;;;Value: (a d a b b c a)
+
+
+
+;; 2.68
+(define (encode message tree)
+  (if (null? message)
+      '()
+      (append (encode-symbol (car message) tree)
+              (encode (cdr message) tree))))
+;;
+;;(define (choose-branch bit branch)
+;;  (cond ((= bit 0) (left-branch branch))
+;;        ((= bit 1) (right-branch branch))
+;;        (else (error "bad bit -- CHOOSE-BRANCH" bit))))
+
+ (define (encode-symbol symbol tree)
+   (cond ((leaf? tree) (if (eq? symbol (symbol-leaf tree)) '() (error "bad symbol, not found in tree")))
+	 ((element-of? symbol (symbols (left-branch tree))) (cons 0 (encode-symbol symbol (left-branch tree))))
+	 ((element-of? symbol (symbols (right-branch tree))) (cons 1 (encode-symbol symbol (right-branch tree))))
+	 (else (error "bad symbol -- not found in tree"))))
+
+(define (element-of? x set)
+  (if (null? set) False
+      (if (eq? x (car set)) True (element-of? x (cdr set)))))
+
+(encode '(a d a b b c a) sample-tree)
+;; ;Value: (0 1 1 0 0 1 0 1 0 1 1 1 0) yes : )
+
+
+;; 2.69
+
+(define (generate-huffman-tree pairs)
+  (successive-merge (make-leaf-set pairs)))
+
+
+(define (successive-merge leaf-tree-set)
+  (cond ((null? leaf-tree-set) leaf-tree-set)
+	((null? (cdr leaf-tree-set)) (car leaf-tree-set))
+	(else (successive-merge (adjoin-set (make-code-tree (car leaf-tree-set) (cadr leaf-tree-set)) (cddr leaf-tree-set))))))
 
